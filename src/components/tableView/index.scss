@@ -1,0 +1,107 @@
+// ProjectTaskTables.scss
+.project-task-container {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .tab-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+  
+      .tab-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        color: #666;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+  
+        &.active {
+          color: #3b82f6;
+        }
+  
+        &:hover {
+          color: #3b82f6;
+        }
+      }
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+  
+      .action-button {
+        padding: 0.5rem;
+        color: #666;
+        border: none;
+        background: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #f3f4f6;
+        }
+      }
+    }
+  
+    .table-container {
+      overflow-x: auto;
+  
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th, td {
+          padding: 0.75rem;
+          text-align: left;
+          border-bottom: 1px solid #e5e7eb;
+        }
+  
+        th {
+          font-weight: 600;
+          color: #374151;
+        }
+  
+        tr {
+          &:hover {
+            background-color: #f9fafb;
+          }
+        }
+  
+        .status-badge {
+          padding: 0.25rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          color: white;
+  
+          &.not-started {
+            background-color: #6b7280;
+          }
+  
+          &.in-progress {
+            background-color: #3b82f6;
+          }
+  
+          &.completed {
+            background-color: #10b981;
+          }
+  
+          &.archived {
+            background-color: #8b5cf6;
+          }
+  
+          &.in-review {
+            background-color: #f59e0b;
+          }
+        }
+      }
+    }
+  }

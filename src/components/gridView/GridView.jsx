@@ -32,9 +32,6 @@ const GridView = ({ cardsData,stageOrder }) => {
         <div key={stage} className="stage-section">
           <div className="stage-header">
             <h2>{stage}</h2>
-            {/* <span className="card-count">
-              {groupedCards[stage].length} Projects
-            </span> */}
           </div>
           
           <div className="cards-grid">

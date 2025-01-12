@@ -2,6 +2,7 @@ import "./index.scss";
 import CalenderIcon from "../../assets/calendar.svg";
 import FolderIcon from "../../assets/folder.svg";
 import FileIcon from "../../assets/file.svg";
+import { getInitials, getPercentage } from "../../utils";
 
 const StatusBadge = ({ status, children }) => {
   return (
@@ -20,23 +21,30 @@ const StatusBadge = ({ status, children }) => {
   );
 };
 
-const Card = ({cardData}) => {
-  
-  const getInitials = name => name.split(" ")[0][0];
-  const getPercentage = (value,total)=>{
-    if (total === 0) {
-      return 'Total cannot be zero';
-    }
-    return (value / total) * 100;
-  }
+export const Progress = ({ completed, total }) => {
+  return (
+    <div className="progress-section">
+      <span>{completed}</span>
+      <div className="progress-bar">
+        <div className="progress-fill" style={{ width: `${total}%` }} />
+      </div>
+      <span className="progress-completed">
+        {" "}
+        {`${getPercentage(completed, total).toFixed()}%`}
+      </span>
+      <span>{`${total}`}</span>
+    </div>
+  );
+};
 
+const Card = ({ cardData }) => {
   return (
     <div className="card">
-     {
-      cardData.status &&  <div className="card-status">
-      <StatusBadge status={cardData.status}>{cardData.status}</StatusBadge>
-    </div>
-     }
+      {cardData.status && (
+        <div className="card-status">
+          <StatusBadge status={cardData.status}>{cardData.status}</StatusBadge>
+        </div>
+      )}
 
       <div className="name-and-id">
         <div className="project-name">
@@ -48,21 +56,12 @@ const Card = ({cardData}) => {
         </div>
       </div>
 
-      <div className="progress-section">
-        <span>{cardData.progress.completed}</span>
-        <div className="progress-bar">
-          <div
-            className="progress-fill"
-            style={{ width: `${cardData.progress.total}%` }}
-          />
-        </div>
-        <span className="progress-completed">
-          {" "}
-          {`${getPercentage(cardData.progress.completed,cardData.progress.total).toFixed()}%`}
-        </span>
-        <span>{`${cardData.progress.total}`}</span>
-      </div>
+      {/* progress section */}
 
+      <Progress
+        completed={cardData.progress.completed}
+        total={cardData.progress.total}
+      />
       <div className="date-range">
         <img src="" alt="" srcSet={CalenderIcon} />
         <span>
@@ -80,9 +79,7 @@ const Card = ({cardData}) => {
             ))}
           </div>
           {cardData.team.length > 3 && (
-            <span className="remaining-count">
-              +{cardData.team.length - 3}
-            </span>
+            <span className="remaining-count">+{cardData.team.length - 3}</span>
           )}
         </div>
 
