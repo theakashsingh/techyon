@@ -1,4 +1,7 @@
 .grid-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   border: 1px solid #f1f1f1;
   padding: 20px;
   box-shadow: 0px 0px 5px 1px #00000026;
@@ -15,9 +18,42 @@
       margin-bottom: 20px;
 
       h2 {
-        font-size: 16px;
-        font-weight: 500;
-        color: #2d2d2d;
+        padding: 4px 12px 4px 12px;
+        gap: 12px;
+        border-radius: 8px;
+        opacity: 0px;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.52px;
+        letter-spacing: 0.0025em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+        color: white;
+        &.not-started {
+          background-color: #808080;
+        }
+
+        &.in-progress {
+          background-color: #4a90e2;
+        }
+
+        &.completed {
+          background-color: #4caf50;
+        }
+
+        &.archived {
+          background-color: #8b5cf6;
+        }
+
+        &.in-review {
+          background-color: #f59e0b;
+        }
+        &.in-revision {
+          background-color: #3e4b4f;
+        }
       }
 
       .card-count {
@@ -30,38 +66,47 @@
     }
 
     .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .see-more-btn {
-      color: #0066cc; /* Standard blue link color */
-      text-decoration: underline;
+      display: block;
+      margin: 10px auto 0px auto;
+      color: #1677ff;
       background: none;
       border: none;
-      font-size: 14px;
-      font-weight: 400;
       cursor: pointer;
       transition: all 0.2s ease;
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.52px;
+      letter-spacing: 0.0025em;
+      text-align: left;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
     }
-  }
-}
-
-@media (max-width: 1536px) {
-  .grid-view .stage-section .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 1280px) {
-  .grid-view .stage-section .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .grid-view {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .grid-view .stage-section .cards-grid {
+  .grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .grid-view {
     grid-template-columns: 1fr;
   }
 }

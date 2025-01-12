@@ -31,7 +31,8 @@ const GridView = ({ cardsData,stageOrder }) => {
       {sortedStages.map((stage) => (
         <div key={stage} className="stage-section">
           <div className="stage-header">
-            <h2>{stage}</h2>
+            <h2 className={`grid-heading ${stage?.toLowerCase()
+                      .replace(" ", "-")}`}>{stage}</h2>
           </div>
           
           <div className="cards-grid">
