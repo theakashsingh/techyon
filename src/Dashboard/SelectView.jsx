@@ -28,7 +28,7 @@
 
 
 import { useState } from "react";
-import { LayoutGrid, Table } from 'lucide-react';
+import { ChevronDown, LayoutGrid, Table } from 'lucide-react';
 
 const SelectView = ({ gridView, tableView, title }) => {
   const [activeView, setActiveView] = useState("gridView");
@@ -36,7 +36,7 @@ const SelectView = ({ gridView, tableView, title }) => {
   return (
     <div className="select-view">
       <div className="select-view-heading">
-        <h2>{title}</h2>
+        <h2>{title} <ChevronDown size={20}/></h2>
         <div className="view-btn">
           <span onClick={() => setActiveView("tableView")}>
             <Table 

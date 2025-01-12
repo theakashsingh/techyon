@@ -56,6 +56,9 @@
         justify-content: space-between;
         margin-bottom: 30px;
         h2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-family: Inter;
           font-size: 20px;
           font-weight: 600;
@@ -64,14 +67,14 @@
           text-align: left;
           text-underline-position: from-font;
           text-decoration-skip-ink: none;
-          color: #2D446E;
+          color: #2d446e;
           text-shadow: -1px 3px 3px #404040;
         }
-        .view-btn{
-            span{
-                margin-right: 5px;
-                cursor: pointer;
-            }
+        .view-btn {
+          span {
+            margin-right: 5px;
+            cursor: pointer;
+          }
         }
       }
     }
