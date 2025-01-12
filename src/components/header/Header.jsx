@@ -1,19 +1,22 @@
+import './index.scss';
+// import { Menu, Search, Bell, Grid, User } from 'lucide-react';
+
 const Header = () => {
   return (
-    <header className="main-header">
-      <div className="left-section">
-        <div className="logo">TECHYON</div>
-        <div className="search-bar">
-          <input type="search" placeholder="Search..." />
-        </div>
+    <header className="header">
+      <div className="header__left">
+        {/* <Menu className="header__icon" /> */}
+        <span className="header__logo">TECHYON</span>
       </div>
-      <div className="right-section">
-        <button className="notification-btn">
-          <span className="notification-count">2</span>
-        </button>
-        <div className="user-profile">
-          <img src="/avatar-placeholder.png" alt="User" />
+      
+      <div className="header__right">
+        {/* <Search className="header__icon" />
+        <Grid className="header__icon" /> */}
+        <div className="header__notification">
+          {/* <Bell className="header__icon" /> */}
+          <span className="header__badge">2</span>
         </div>
+        {/* <User className="header__icon" /> */}
       </div>
     </header>
   );

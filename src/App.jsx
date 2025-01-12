@@ -1,21 +1,16 @@
 import "./App.scss";
-import Card from "./components/Card/Card";
-import GridView from "./components/gridView/GridView";
-import TableView from "./components/tableView/TableView";
-import projectData from "./projectMockData";
-import taskData from "./taskMockData";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sideBar/SideBar";
+import Dashboard from "./Dashboard/Dashboard";
 
 function App() {
   return (
-    <div>
-      {/* <Card/> */}
-      <GridView
-        cardsData={projectData}
-        stageOrder={["Not Started", "In Progress", "Archive", "Completed"]}
-      />
-      <GridView cardsData={taskData} stageOrder={["In Progress", "In Review", "In Revision", "Completed"]}/> 
-      <TableView tableType={"project"} tableData={projectData} />
-      <TableView tableType={"tasks"} tableData={taskData} />
+    <div className="app">
+      <Sidebar />
+      <div className="main-content">
+        <Header />
+        <Dashboard />
+      </div>
     </div>
   );
 }

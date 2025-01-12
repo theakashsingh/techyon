@@ -1,0 +1,58 @@
+// Header.scss
+.header {
+    background-color: #2D446E;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    width: 100%;
+    color: white;
+    
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    &__logo {
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+    }
+    
+    &__icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    
+    &__notification {
+      position: relative;
+    }
+    
+    &__badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background-color: #ef4444;
+      color: white;
+      font-size: 12px;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }

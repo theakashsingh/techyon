@@ -12,29 +12,36 @@
       width: 100%;
       border-collapse: collapse;
 
-      th,
-      td {
+      th{
         text-align: left;
         font-weight: 700;
         font-size: 12px;
         color: #404040;
-      }
-
-      th {
+        border-top: none;
         padding: 10px 15px;
         font-weight: 600;
         color: #374151;
         border: 1px solid #808080;
+        border-top: none;
+        border-left: none;
+        &:last-child{
+          border-right: none;
+        }
       }
-      td {
-        border: 1px solid #808080;
-        padding: 10px 15px;
-        color: #171717;
-        font-weight: 400;
-        font-size: 12px;
-      }
-
+       
       tr {
+        td {
+          border: 1px solid #808080;
+          border-left: none;
+          padding: 10px 15px;
+          color: #171717;
+          font-weight: 400;
+          font-size: 12px;
+          border-bottom: none;
+          &:last-child{
+            border-right: none;
+          }
+        }
         &:hover {
           background-color: #f9fafb;
         }
@@ -44,7 +51,7 @@
         color: white;
         text-align: center;
         &.not-started {
-          background-color: #808080;
+          background-color: #B0B0B0;
         }
 
         &.in-progress {
