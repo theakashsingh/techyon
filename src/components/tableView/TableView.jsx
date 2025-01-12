@@ -1,9 +1,7 @@
-import { Progress } from "../Card/Card";
+import ProgressBar from "../Card/ProgressBar";
 import "./index.scss";
 
 const TableView = ({ tableType, tableData }) => {
-    console.log(tableData);
-    
   return (
     <div className="project-task-container">
       {tableType === "project" ? (
@@ -27,20 +25,18 @@ const TableView = ({ tableType, tableData }) => {
                   <td>{project.name}</td>
                   <td>
                     {" "}
-                    <Progress
+                    <ProgressBar
                       completed={project.progress?.completed}
                       total={project.progress?.total}
                     />
                   </td>
                   <td>{project.owner}</td>
-                  <td>
-                    <span
-                      className={`status-badge ${project.stage
-                        ?.toLowerCase()
-                        .replace(" ", "-")}`}
-                    >
-                      {project.stage}
-                    </span>
+                  <td
+                    className={`table-status-badge ${project.stage
+                      ?.toLowerCase()
+                      .replace(" ", "-")}`}
+                  >
+                    {project.stage}
                   </td>
                   <td>{project.date?.start}</td>
                   <td>{project.date?.end}</td>
@@ -74,14 +70,12 @@ const TableView = ({ tableType, tableData }) => {
                       : "Not Assigned"}
                   </td>
                   <td>{task.owner}</td>
-                  <td>
-                    <span
-                      className={`status-badge ${task.stage
-                        ?.toLowerCase()
-                        .replace(" ", "-")}`}
-                    >
-                      {task?.stage}
-                    </span>
+                  <td
+                    className={`table-status-badge ${task.stage
+                      ?.toLowerCase()
+                      .replace(" ", "-")}`}
+                  >
+                    {task?.stage}
                   </td>
                   <td>{task.date?.start}</td>
                   <td>{task.date?.end}</td>

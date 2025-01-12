@@ -54,7 +54,7 @@
     background: white;
     border-radius: 8px;
     padding: 16px;
-    width: 320px;
+    // max-width: 100%;
     border: 1px solid #F2F2F2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -101,46 +101,11 @@
       }
     }
   
-    .progress-section {
-      position: relative;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      gap: 2px;
-      span {
-        font-size: 11px;
-        color: #404040;
-        font-weight: 400;
-      }
-      .progress-completed{
-        position: absolute;
-        left: 45%;
-        font-weight: 700;
-        font-size: 12px;
-        color: #2D446E;
-      }
-  
-      .progress-bar {
-        height: 14px;
-        width: -webkit-fill-available;
-        background: #F3F4F6;
-        border-radius: 7px;
-        overflow: hidden;
-        
-        .progress-fill {
-          height: 100%;
-          background: #22C55E;
-          border-radius: 4px;
-          transition: width 0.3s ease;
-        }
-      }
-    }
-  
     .date-range {
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-top: 16px;
       margin-bottom: 16px;
       
       .calendar-icon {

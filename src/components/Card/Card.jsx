@@ -2,7 +2,8 @@ import "./index.scss";
 import CalenderIcon from "../../assets/calendar.svg";
 import FolderIcon from "../../assets/folder.svg";
 import FileIcon from "../../assets/file.svg";
-import { getInitials, getPercentage } from "../../utils";
+import { getInitials } from "../../utils";
+import  ProgressBar  from "./ProgressBar";
 
 const StatusBadge = ({ status, children }) => {
   return (
@@ -21,21 +22,7 @@ const StatusBadge = ({ status, children }) => {
   );
 };
 
-export const Progress = ({ completed, total }) => {
-  return (
-    <div className="progress-section">
-      <span>{completed}</span>
-      <div className="progress-bar">
-        <div className="progress-fill" style={{ width: `${total}%` }} />
-      </div>
-      <span className="progress-completed">
-        {" "}
-        {`${getPercentage(completed, total).toFixed()}%`}
-      </span>
-      <span>{`${total}`}</span>
-    </div>
-  );
-};
+
 
 const Card = ({ cardData }) => {
   return (
@@ -58,7 +45,7 @@ const Card = ({ cardData }) => {
 
       {/* progress section */}
 
-      <Progress
+      <ProgressBar
         completed={cardData.progress.completed}
         total={cardData.progress.total}
       />
