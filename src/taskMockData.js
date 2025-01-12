@@ -13,7 +13,7 @@ const mockTask = [
         { name: "Mike Brown" },
       ],
       files: 12,
-      status: "delayed",
+      status: "on-track",
       stage: "In Review",
     },
     {
@@ -37,7 +37,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "",
       stage: "In Review",
     },
     {
@@ -73,7 +73,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "delayed",
       stage: "In Progress",
     },
     {
@@ -157,7 +157,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "delayed",
       stage: "In Revision",
     },
     {
@@ -181,7 +181,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "",
       stage: "Completed",
     },
     {
@@ -217,7 +217,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "",
       stage: "Completed",
     },
     {
@@ -229,7 +229,7 @@ const mockTask = [
       associated_team: "",
       team: [{ name: "John Doe" }, { name: "Jane Smith" }],
       files: 8,
-      status: "on-track",
+      status: "",
       stage: "Completed",
     }
   ];
