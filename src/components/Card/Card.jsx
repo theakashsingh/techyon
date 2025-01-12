@@ -1,9 +1,7 @@
 import "./index.scss";
-import CalenderIcon from "../../assets/calendar.svg";
-import FolderIcon from "../../assets/folder.svg";
-import FileIcon from "../../assets/file.svg";
+import { Folder, Calendar, File } from 'lucide-react';
 import { getInitials } from "../../utils";
-import  ProgressBar  from "./ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 const StatusBadge = ({ status, children }) => {
   return (
@@ -22,8 +20,6 @@ const StatusBadge = ({ status, children }) => {
   );
 };
 
-
-
 const Card = ({ cardData }) => {
   return (
     <div className="card">
@@ -35,7 +31,7 @@ const Card = ({ cardData }) => {
 
       <div className="name-and-id">
         <div className="project-name">
-          <img src="" alt="" srcSet={FolderIcon} />
+          <Folder className="w-5 h-5" size={18} strokeWidth={1.5}/>
           <span>{cardData.name}</span>
         </div>
         <div className="project-id">
@@ -44,13 +40,12 @@ const Card = ({ cardData }) => {
       </div>
 
       {/* progress section */}
-
       <ProgressBar
         completed={cardData.progress.completed}
         total={cardData.progress.total}
       />
       <div className="date-range">
-        <img src="" alt="" srcSet={CalenderIcon} />
+        <Calendar className="w-5 h-5" size={18} strokeWidth={1.5}/>
         <span>
           {cardData.date.start} - {cardData.date.end}
         </span>
@@ -71,7 +66,7 @@ const Card = ({ cardData }) => {
         </div>
 
         <div className="files-count">
-          <img src={FileIcon} alt="" />
+          <File className="w-5 h-5" size={18} strokeWidth={1.5}/>
           <span>{cardData.files} Files</span>
         </div>
       </div>

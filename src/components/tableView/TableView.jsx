@@ -1,5 +1,16 @@
 import ProgressBar from "../Card/ProgressBar";
+import {
+  Folder,
+  CheckSquare,
+  Calendar,
+  User,
+  Users,
+  BellRing,
+  BarChart,
+  Percent,
+} from "lucide-react";
 import "./index.scss";
+import { getPercentage } from "../../utils";
 
 const TableView = ({ tableType, tableData }) => {
   return (
@@ -10,12 +21,42 @@ const TableView = ({ tableType, tableData }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Project Name</th>
-                <th>Progress</th>
-                <th>Owner</th>
-                <th>Status</th>
-                <th>Start Date</th>
-                <th>End Date</th>
+                <th>
+                  <span>
+                    <Folder size={18} strokeWidth={1.5} /> Project Name
+                  </span>
+                </th>
+                
+                <th>
+                  <span>
+                    <Percent size={18} strokeWidth={1.5} />
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <User size={18} strokeWidth={1.5} /> Owner
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <CheckSquare size={18} strokeWidth={1.5} /> Tasks
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <BarChart size={18} strokeWidth={1.5} /> Status
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <Calendar size={18} strokeWidth={1.5} /> Start Date
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <Calendar size={18} strokeWidth={1.5} /> End Date
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -23,6 +64,9 @@ const TableView = ({ tableType, tableData }) => {
                 <tr key={project.id}>
                   <td>{project.id}</td>
                   <td>{project.name}</td>
+                  
+                  <td>{getPercentage(project.progress?.completed,project.progress?.total).toFixed(2)}</td>
+                  <td><span><User size={18} strokeWidth={1.5}/> {project.owner}</span></td>
                   <td>
                     {" "}
                     <ProgressBar
@@ -30,7 +74,6 @@ const TableView = ({ tableType, tableData }) => {
                       total={project.progress?.total}
                     />
                   </td>
-                  <td>{project.owner}</td>
                   <td
                     className={`table-status-badge ${project.stage
                       ?.toLowerCase()
@@ -51,12 +94,38 @@ const TableView = ({ tableType, tableData }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Task Name</th>
-                <th>Assigned Team</th>
-                <th>Owner</th>
-                <th>Status</th>
-                <th>Start Date</th>
-                <th>End Date</th>
+                <th>
+                  <span>
+                    {" "}
+                    <BellRing size={18} strokeWidth={1.5} /> Task Name
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <Users size={18} strokeWidth={1.5} /> Assigned Team
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <User size={18} strokeWidth={1.5} /> Owner
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <BarChart size={18} strokeWidth={1.5} /> Status
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <Calendar size={18} strokeWidth={1.5} />
+                    Start Date
+                  </span>
+                </th>
+                <th>
+                  <span>
+                    <Calendar size={18} strokeWidth={1.5} /> End Date
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>

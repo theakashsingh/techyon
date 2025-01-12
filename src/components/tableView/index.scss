@@ -24,6 +24,12 @@
         border: 1px solid #808080;
         border-top: none;
         border-left: none;
+        vertical-align: middle;
+        span{
+          display: flex;
+          align-items: center;
+          gap: 2px;
+        }
         &:last-child{
           border-right: none;
         }
@@ -40,6 +46,11 @@
           border-bottom: none;
           &:last-child{
             border-right: none;
+          }
+          span{
+            display: flex;
+            align-items: center;
+            gap: 2px;
           }
         }
         &:hover {
